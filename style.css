@@ -30,7 +30,7 @@ body{
     color:#FCEEF2;
 }
 
-/* MENU */
+/* MENU NORMAL */
 .nav-menu ul{
     display:flex;
     list-style:none;
@@ -55,6 +55,7 @@ body{
 /* HERO */
 .hero{
     height:500px;
+
     background:
     linear-gradient(to right, rgba(255,248,250,0.92), rgba(255,248,250,0.15)),
     url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9');
@@ -180,6 +181,11 @@ html{
 /* RESPONSIVE */
 @media (max-width:768px){
 
+    body{
+        overflow-x:hidden;
+    }
+
+    /* HEADER */
     .main-header{
         flex-direction:column;
         align-items:flex-start;
@@ -194,7 +200,7 @@ html{
         font-size:12px;
     }
 
-    /* ICONO MENU */
+    /* ICONO ☰ */
     .menu-icon{
         display:block;
         font-size:38px;
@@ -202,37 +208,45 @@ html{
         color:white;
 
         position:absolute;
-        top:30px;
+        top:20px;
         right:20px;
     }
 
-    /* MENU MOBILE */
+    /* MENU RESPONSIVE */
     .nav-menu{
         width:100%;
-        position:relative;
     }
 
     .nav-menu ul{
         display:none;
         flex-direction:column;
-        align-items:flex-end;
-        gap:8px;
 
-        width:auto;
+        align-items:flex-start;
 
-        margin-top:15px;
+        gap:10px;
+
+        width:100%;
+
+        margin-top:20px;
     }
 
     #menu-toggle:checked ~ ul{
         display:flex;
     }
 
+    .nav-menu li{
+        width:100%;
+        list-style:none;
+    }
+
     .nav-menu a{
         display:block;
 
+        width:100%;
+
         background:rgba(255,255,255,0.15);
 
-        padding:10px 14px;
+        padding:12px;
 
         border-radius:8px;
 
@@ -248,12 +262,15 @@ html{
         text-align:center;
 
         justify-content:center;
+    }
 
-        margin-top:20px;
+    .hero-text{
+        max-width:100%;
     }
 
     .hero h1{
         font-size:42px;
+        line-height:1.3;
     }
 
     .hero p{
@@ -263,7 +280,16 @@ html{
     /* TARJETAS */
     .grid-content{
         grid-template-columns:1fr;
+        gap:20px;
         padding:20px;
+    }
+
+    .card{
+        width:100%;
+    }
+
+    .card img{
+        height:auto;
     }
 
     /* FOOTER */
