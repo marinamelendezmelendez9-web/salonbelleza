@@ -10,7 +10,6 @@ body{
 }
 
 /* HEADER */
-
 .main-header{
     background:#B76E79;
     color:white;
@@ -18,6 +17,7 @@ body{
     justify-content:space-between;
     align-items:center;
     padding:20px 60px;
+    position:relative;
 }
 
 .logo h2{
@@ -31,7 +31,6 @@ body{
 }
 
 /* MENU */
-
 .nav-menu ul{
     display:flex;
     list-style:none;
@@ -44,6 +43,7 @@ body{
     font-weight:bold;
 }
 
+/* BOTON MENU */
 #menu-toggle{
     display:none;
 }
@@ -53,17 +53,10 @@ body{
 }
 
 /* HERO */
-
 .hero{
     height:500px;
-
     background:
-    linear-gradient(
-    to right,
-    rgba(255,248,250,0.92),
-    rgba(255,248,250,0.15)
-    ),
-
+    linear-gradient(to right, rgba(255,248,250,0.92), rgba(255,248,250,0.15)),
     url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9');
 
     background-size:cover;
@@ -105,13 +98,12 @@ body{
     font-weight:bold;
 }
 
-/* CARDS */
-
+/* TARJETAS */
 .grid-content{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:25px;
-    padding:40px 60px;
+    padding:60px;
 }
 
 .card{
@@ -119,6 +111,13 @@ body{
     border-radius:15px;
     overflow:hidden;
     box-shadow:0 5px 15px rgba(0,0,0,0.12);
+
+    transition:0.4s;
+    text-align:center;
+}
+
+.card:hover{
+    transform:translateY(-10px);
 }
 
 .card img{
@@ -130,16 +129,13 @@ body{
 .card h3{
     color:#A64D79;
     margin:20px 0 10px;
-    text-align:center;
 }
 
 .card p{
     padding:0 20px 20px;
-    text-align:center;
 }
 
 /* FOOTER */
-
 .main-footer{
     background-color:#B76E79;
     color:white;
@@ -151,6 +147,8 @@ body{
     display:flex;
     justify-content:space-around;
     align-items:center;
+    max-width:1200px;
+    margin:0 auto;
     flex-wrap:wrap;
     gap:15px;
 }
@@ -161,24 +159,31 @@ body{
     border-radius:50%;
     width:35px;
     height:35px;
+
     display:inline-flex;
     justify-content:center;
     align-items:center;
+
+    margin:0 5px;
     text-decoration:none;
+    font-size:20px;
+}
+
+.footer-logo{
+    font-size:24px;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 /* RESPONSIVE */
-
 @media (max-width:768px){
 
     .main-header{
         flex-direction:column;
-        align-items:center;
+        align-items:flex-start;
         padding:20px;
-    }
-
-    .logo{
-        text-align:center;
     }
 
     .logo h2{
@@ -189,32 +194,33 @@ body{
         font-size:12px;
     }
 
+    /* ICONO MENU */
+    .menu-icon{
+        display:block;
+        font-size:38px;
+        cursor:pointer;
+        color:white;
+
+        position:absolute;
+        top:30px;
+        right:20px;
+    }
+
+    /* MENU MOBILE */
     .nav-menu{
         width:100%;
         position:relative;
     }
 
-    .menu-icon{
-        display:block;
-        font-size:35px;
-        color:white;
-        cursor:pointer;
-
-        position:absolute;
-        top:-55px;
-        right:20px;
-    }
-
     .nav-menu ul{
         display:none;
         flex-direction:column;
-        gap:10px;
+        align-items:flex-end;
+        gap:8px;
 
-        position:absolute;
-        top:0;
-        right:70px;
+        width:auto;
 
-        width:180px;
+        margin-top:15px;
     }
 
     #menu-toggle:checked ~ ul{
@@ -223,17 +229,27 @@ body{
 
     .nav-menu a{
         display:block;
-        background:#A64D79;
-        padding:12px;
+
+        background:rgba(255,255,255,0.15);
+
+        padding:10px 14px;
+
         border-radius:8px;
-        text-align:center;
+
+        font-size:15px;
     }
 
+    /* HERO */
     .hero{
         height:auto;
+
         padding:60px 20px;
+
         text-align:center;
+
         justify-content:center;
+
+        margin-top:20px;
     }
 
     .hero h1{
@@ -244,12 +260,16 @@ body{
         font-size:18px;
     }
 
+    /* TARJETAS */
     .grid-content{
         grid-template-columns:1fr;
         padding:20px;
     }
 
+    /* FOOTER */
     .footer-container{
         flex-direction:column;
+        gap:15px;
+        padding:20px;
     }
 }
